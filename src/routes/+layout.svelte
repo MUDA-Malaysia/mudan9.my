@@ -13,7 +13,10 @@
 
 <svelte:head>
   <title>Parti MUDA | N9</title>
-  <meta name="description" content="Offical site of Parti MUDA Negeri Sembilan" />
+  <meta name="description" content="Parti MUDA Negeri Sembilan" />
+  <meta property="og:title" content="MUDA" />
+  <meta property="og:description" content="Parti MUDA Negeri Sembilan" />
+  <meta property="og:image" content="/muda-n9.png" />
 </svelte:head>
 
 <!-- <nav>
