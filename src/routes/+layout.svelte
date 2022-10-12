@@ -19,14 +19,15 @@
   <meta property="og:image" content="/muda-n9.png" />
 </svelte:head>
 
-<!-- <nav>
+<nav>
   <ul>
+    <li><a href="/about-us">ABOUT US</a></li>
+    <!-- <li><a href="/states">STATE</a></li> -->
+    <!-- <li><a href="">About Us</a></li>
     <li><a href="">About Us</a></li>
-    <li><a href="">About Us</a></li>
-    <li><a href="">About Us</a></li>
-    <li><a href="">About Us</a></li>
+    <li><a href="">About Us</a></li> -->
   </ul>
-</nav> -->
+</nav>
 
 <main>
   <slot />
@@ -109,12 +110,16 @@
 </footer>
 
 <style lang="scss">
-  nav ul {
-    display: flex;
-    flex-direction: row;
+  nav {
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1.5rem;
 
-    li {
-      display: block;
+      li {
+        display: block;
+        margin: 0 0.5rem;
+      }
     }
   }
 
@@ -135,7 +140,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px 40px 60px;
+    padding: 1.5rem 1.5rem 3rem;
     font-size: 12px;
 
     .social-media-list,
@@ -170,7 +175,7 @@
 
   @media (min-width: 480px) {
     footer {
-      padding: 40px 0;
+      padding: 1.5rem 0;
     }
   }
 </style>
