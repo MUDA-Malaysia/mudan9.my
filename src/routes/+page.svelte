@@ -30,10 +30,12 @@
     display: block;
     color: #000;
     background-color: #fbbe03;
-    height: 40px;
-    line-height: 40px;
+    height: 45px;
+    line-height: 45px;
     font-size: 1.2rem;
     text-transform: uppercase;
     text-align: center;
+    width: 80%;
+    margin: 10px auto 0;
   }
 </style>
