@@ -33,6 +33,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource/fira-mono": "^4.5.0"
+		"@fontsource/fira-mono": "^4.5.0",
+		"svelte-intl-precompile": "^0.12.0"
 	}
 }
