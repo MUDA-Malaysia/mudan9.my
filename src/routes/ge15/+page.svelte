@@ -68,7 +68,8 @@
     list-style: none;
     list-style-position: inside;
     padding: 1.5rem;
-    display: block;
+    display: flex;
+    flex-direction: column;
 
     li {
       display: inline-flex;
