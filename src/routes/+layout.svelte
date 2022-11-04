@@ -1,3 +1,23 @@
+<script context="module">
+  import {
+    addMessages,
+    init,
+    getLocaleFromNavigator /*, register */
+  } from 'svelte-intl-precompile';
+  // import en from '$locales/en.js'; // If using typescript you can also use the .ts extension.
+  // import es from '$locales/es.js'; // load from $myprefix/es.js you configured a custom import path.
+  // if you put your translations in js files, import then usin the relative path. E.g. `import en from '../../locales/en.js'`
+  // @ts-ignore
+  // addMessages('en', en);
+  // addMessages('es', es);
+  // register('es', () => import('$locales/es.js')); <-- use this approach if you want locales to be load lazily
+
+  init({
+    fallbackLocale: 'en',
+    initialLocale: getLocaleFromNavigator() || 'en'
+  });
+</script>
+
 <script lang="ts">
   import { page } from '$app/stores';
   import { onMount } from 'svelte';
@@ -21,9 +41,9 @@
 
 <nav>
   <ul>
-    <li><a href="/about-us">ABOUT US</a></li>
-    <!-- <li><a href="/states">STATE</a></li> -->
-    <!-- <li><a href="">About Us</a></li>
+    <li><a href="/ge15">GE15 (2022)</a></li>
+    <!-- <li><a href="/about-us">ABOUT US</a></li>
+    <li><a href="/states">STATE</a></li>
     <li><a href="">About Us</a></li>
     <li><a href="">About Us</a></li> -->
   </ul>
@@ -100,13 +120,13 @@
     <li><a href="{$page.url}?lang=zh">中文(简体)</a></li>
     <li><a href="{$page.url}?lang=en">English</a></li>
   </ul>
-  <div>Copyright Reserved © 2022. MUDA Negeri Sembilan.</div>
+  <div style="text-align: center">Copyright Reserved © 2022. MUDA N9.</div>
   <div>
-    Sponsored, Designed & Made by <a
-      href="https://www.linkedin.com/in/sian-loong-7b4a3037"
-      target="_blank">SianLoong</a
+    Designed & Made by <a href="https://www.linkedin.com/in/sian-loong-7b4a3037" target="_blank"
+      >SianLoong</a
     >.
   </div>
+  <div>#MUDAN9 #INIRASAHKITA</div>
 </footer>
 
 <style lang="scss">
