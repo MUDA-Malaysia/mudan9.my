@@ -41,7 +41,7 @@
 
 <nav>
   <ul>
-    <li><a href="/ge15">PRU 15 (2022)</a></li>
+    <li><a href="/ge15">GE15 (2022)</a></li>
     <!-- <li><a href="/about-us">ABOUT US</a></li>
     <li><a href="/states">STATE</a></li>
     <li><a href="">About Us</a></li>

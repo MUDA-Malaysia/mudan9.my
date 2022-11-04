@@ -45,6 +45,7 @@
   ];
 </script>
 
+<h1>MUDA Candidates</h1>
 <ul>
   {#each candidates as candidate}
     <li>
