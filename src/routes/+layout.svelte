@@ -167,7 +167,6 @@
     justify-content: center;
     align-items: center;
     padding: 2rem 1.5rem 3rem;
-    font-size: 12px;
 
     .social-media-list,
     .locale-list {
