@@ -1,4 +1,6 @@
-<script lang="ts">
+<script context="module">
+  export const prerender = true;
+
   const candidates = [
     {
       name: 'Danial Abdul Majeed',
@@ -31,7 +33,9 @@
       state: 'Melaka',
       image: 'images/ge15/mutalib-uthman.webp',
       socialMedia: {
-        fb: 'https://www.facebook.com/MudalibUthman/'
+        fb: 'https://www.facebook.com/MudalibUthman/',
+        ig: 'https://www.instagram.com/mutalibuthman/',
+        twitter: 'https://twitter.com/mutalibuthman/'
       }
     },
     {
@@ -73,92 +77,104 @@
   ];
 </script>
 
-<h1>MUDA Candidates</h1>
-<ul class="candidate-list">
-  {#each candidates as candidate}
-    <li>
-      <span class="avatar"
-        ><div class="thumbnail">
-          <div class="wrapper">
-            <img src={candidate.image} alt={candidate.name} />
-          </div>
-        </div></span
-      >
-      <span class="info">
-        <div class="no">{`${candidate.no} - ${candidate.parliament} (${candidate.state})`}</div>
-        <div>{candidate.name}</div>
-        {#if candidate.socialMedia}
-          <ul class="social-media-list">
-            {#if candidate.socialMedia.fb}
-              <li>
-                <a href={candidate.socialMedia.fb} target="_blank"
-                  >{@html `<svg width="24px" height="24px"><use href="#facebook" /></svg>`}</a
-                >
-              </li>
-            {/if}
-            <!-- {#if candidate.socialMedia.ig}
-              <li>
-                <a href={candidate.socialMedia.ig} target="_blank"
-                  >{@html `<svg width="24px" height="24px"><use href="#instagram" /></svg>`}</a
-                >
-              </li>
-            {/if} -->
-            {#if candidate.socialMedia.twitter}
-              <li>
-                <a href={candidate.socialMedia.twitter} target="_blank"
-                  >{@html `<svg width="24px" height="24px"><use href="#twitter" /></svg>`}</a
-                >
-              </li>
-            {/if}
-          </ul>
-        {/if}
-      </span>
-    </li>
-  {/each}
-</ul>
+<script lang="ts">
+</script>
+
+<div class="container">
+  <h1 class="caption">MUDA Candidates</h1>
+  <ul class="candidate-list">
+    {#each candidates as candidate}
+      <li>
+        <span class="avatar"
+          ><div class="thumbnail">
+            <div class="wrapper">
+              <img src={candidate.image} alt={candidate.name} />
+            </div>
+          </div></span
+        >
+        <span class="info">
+          <div class="no">{`${candidate.no} - ${candidate.parliament} (${candidate.state})`}</div>
+          <div>{candidate.name}</div>
+          {#if candidate.socialMedia}
+            <ul class="social-media-list">
+              {#if candidate.socialMedia.fb}
+                <li>
+                  <a href={candidate.socialMedia.fb} target="_blank"
+                    >{@html `<svg width="24px" height="24px"><use href="#facebook" /></svg>`}</a
+                  >
+                </li>
+              {/if}
+              {#if candidate.socialMedia.ig}
+                <li>
+                  <a href={candidate.socialMedia.ig} target="_blank"
+                    >{@html `<svg width="24px" height="24px"><use href="#instagram" /></svg>`}</a
+                  >
+                </li>
+              {/if}
+              {#if candidate.socialMedia.twitter}
+                <li>
+                  <a href={candidate.socialMedia.twitter} target="_blank"
+                    >{@html `<svg width="24px" height="24px"><use href="#twitter" /></svg>`}</a
+                  >
+                </li>
+              {/if}
+            </ul>
+          {/if}
+        </span>
+      </li>
+    {/each}
+  </ul>
+</div>
 
 <style lang="scss">
+  .container {
+    padding: 1.5rem;
+  }
+
+  .caption {
+    text-align: left;
+  }
+
   .candidate-list {
     list-style: none;
     list-style-position: inside;
-    padding: 1.5rem;
     display: flex;
     flex-direction: column;
+    padding: 1.5rem 0;
 
     & > li {
       display: inline-flex;
       margin-bottom: 1.5rem;
-
-      .avatar {
-        width: 40%;
-      }
+      flex-direction: column;
+      width: 100%;
 
       .thumbnail {
         position: relative;
-        width: 180px;
-        max-width: 100%;
+        width: 100%;
         padding-top: 100%;
-        background-color: red;
+        // border: 1px solid red;
+        // aspect-ratio: 1;
 
         .wrapper {
           position: absolute;
           top: 0;
           left: 0;
           bottom: 0;
-          right: 0;
-          color: white;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
 
         img {
           display: block;
           width: 100%;
           height: 100%;
-          object-fit: cover;
         }
       }
 
       .info {
-        padding-left: 15px;
+        flex-grow: 1;
+        padding: 1.5rem 0;
 
         .no {
           font-weight: bold;
@@ -177,6 +193,22 @@
             margin-right: 10px;
           }
         }
+      }
+    }
+
+    @media screen and (min-width: 480px) {
+      display: block;
+
+      & > li {
+        flex-direction: row;
+
+        .info {
+          padding: 1.5rem;
+        }
+      }
+
+      .avatar {
+        width: 38%;
       }
     }
   }
