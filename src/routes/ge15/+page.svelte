@@ -191,6 +191,10 @@
 
           & > li {
             margin-right: 10px;
+
+            a {
+              display: inline-flex;
+            }
           }
         }
       }
